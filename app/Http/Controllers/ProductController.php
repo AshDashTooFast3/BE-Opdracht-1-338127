@@ -15,16 +15,37 @@ class ProductController extends Controller
 
     public function index()
     {
-        $product = $this->product->getAllProducts();
-        
+        $products = $this->product->getAllProducts();
+        return view('index', [
+            'title' => 'Overzicht Magazijn Jamin',
+            'products' => $products
+        ]);
 
-        return view('products.index', 
-        [
-            'title' => 'Producten',
-            'message' => 'Overzicht van alle producten',
-            'products' => $product
+    }
+
+    public function allergenenInfo($productId)
+    {
+        $allergenenInfo = $this->product->getAllergenenInfo($productId);
+
+        return view('product.allergeenInfo', [
+            'title' => 'Allergeen Informatie',
+            'allergenenInfo' => $allergenenInfo
         ]);
     }
+
+     public function leveringsInfo($productId)
+    {
+        $leverantieInfo = $this->product->getLeverantieInfo($productId);
+
+        $leverancierInfo = $this->product->getLeverancierInfo($productId);
+
+        return view('product.leveringsInfo', [
+            'title' => 'Leverings Informatie',
+            'leverantieInfo' => $leverantieInfo,
+            'leverancierInfo' => $leverancierInfo
+        ]);
+    }
+    
 
     /**
      * Show the form for creating a new resource.

@@ -1,21 +1,18 @@
-use laravel;
-
 DROP PROCEDURE IF EXISTS sp_GetAllLeveranciers;
 
 DELIMITER $$
 
-CREATE PROCEDURE sp_GetAllLeveranciers()
+CREATE PROCEDURE sp_GetAllLeveranciers ()
 BEGIN
-	
-    SELECT LVRC.Id
-          ,LVRC.Naam
-          ,LVRC.ContactPersoon
-          ,LVRC.LeverancierNummer
-          ,LVRC.Mobiel
-          
-	FROM Leverancier AS LVRC
 
+    SELECT LVRAC.Id
+          ,LVRAC.Naam
+          ,LVRAC.Contactpersoon
+          ,LVRAC.LeverancierNummer
+          ,LVRAC.Mobiel
+    FROM Leverancier AS LVRAC;
+    
+    
 END$$
 
 DELIMITER ;
-

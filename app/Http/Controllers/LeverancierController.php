@@ -20,7 +20,7 @@ class LeverancierController extends Controller
      */
     public function index()
     {
-        $leveranciers = $this->leverancierModel->sp_getAllLeveranciers();
+        $leveranciers = $this->leverancierModel->sp_getAllLeveranciers(4);
 
         return view('leverancier.index',[
             'title' => 'Leverancier',

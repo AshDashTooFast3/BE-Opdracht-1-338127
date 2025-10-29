@@ -17,18 +17,20 @@
             <thead>
                 <tr>
                     <th>Naam</th>
-                    <th>Omschrijving</th>
-                    <th>LeverancierNummer</th>
-                    <th>Mobiel</th>
+                    <th>Datum Levering</th>
+                    <th>Aantal</th>
+                    <th>Datum Eerst Volgende Levering</th>
+                    <th>Aantal Aanwezig</th>
                 </tr>
             </thead>
             <tbody>
                 @forelse ($leveranciers as $leverancier)
                     <tr>
                         <td>{{ $leverancier->Naam }}</td>
-                        <td>{{ $leverancier->Contactpersoon }}</td>
-                        <td>{{ $leverancier->LeverancierNummer }}</td>
-                        <td>{{ $leverancier->Mobiel }}</td>
+                        <td>{{ $leverancier->DatumLevering }}</td>
+                        <td>{{ $leverancier->Aantal }}</td>
+                        <td>{{ $leverancier->DatumEerstVolgendeLevering }}</td>
+                        <td>{{ $leverancier->AantalAanwezig }}</td>
                     </tr>
                 @empty
                     <tr>
