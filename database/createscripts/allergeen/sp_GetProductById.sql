@@ -16,9 +16,8 @@ BEGIN
         FROM Product AS PROD
         LEFT JOIN ProductPerAllergeen AS PPA ON PPA.ProductId = PROD.Id
 
-    WHERE PROD.Id = p_productid;
-
-
+    WHERE PROD.Id = p_productid
+    
 END$$
 
 DELIMITER ;
