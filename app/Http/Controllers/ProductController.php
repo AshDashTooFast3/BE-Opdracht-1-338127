@@ -20,21 +20,6 @@ class ProductController extends Controller
             'title' => 'Overzicht Magazijn Jamin',
             'products' => $products
         ]);
-
     }
 
-    public function allergenenInfo($productId)
-    {
-        $allergenenInfo = $this->product->getAllergenenInfo($productId);
-
-        return view('product.allergeenInfo', [
-            'title' => 'Allergeen Informatie',
-            'allergenenInfo' => $allergenenInfo
-        ]);
-    }
-
-    
-    
-
-    
 }

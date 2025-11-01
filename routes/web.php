@@ -12,15 +12,10 @@ use App\Http\Controllers\ProductController;
 Route::get('/',[ProductController::class, 'index'])->name('home');
 
 
-//allergenen index
-
-Route::get('/allergeen', [AllergeenController::class, 'index'])->name('allergeen.index');
-
-
-
-Route::get('products/allergeenInfo',[ProductController::class, 'allergenenInfo'])->name('products.allergenenInfo');
+Route::get('product/{id}/allergeenInfo',[AllergeenController::class, 'allergenenInfo'])->name('products.allergenenInfo');
 
 Route::get('product/{id}/leveringsInfo',[LeverancierController::class, 'leveringsInfo'])->name('products.leveringsInfo');
+
 
 
 
