@@ -38,21 +38,29 @@
 
             <table class="table table-hover table-striped">
                 <thead>
-                    <th>Naam</th>
+                    <th>Naam Product</th>
                     <th>Datum Laatste Levering</th>
                     <th>Aantal</th>
-                    <th>Datum Eerst Volgende Levering</th>
+                    <th>Eerstvolgende Levering</th>
                 </thead>
                 <tbody>
-                    @forelse ($leverantieInfo as $LTinfo)
-                        <tr>
-                            <td>{{ $LTinfo->Naam}}</td>
-                            <td>{{ $LTinfo->DatumLevering }}</td>
-                            <td>{{ $LTinfo->Aantal }}</td>
-                            <td>{{ $LTinfo->DatumEerstVolgendeLevering }}</td>
-                        </tr>
+                    @forelse($leverantieInfo as $LTinfo)
+                        @if($LTinfo->Aantal == 0)
+                            <tr>
+                                <td colspan="4">Er is van dit product op dit moment geen voorraad aanwezig, de verwachte eerstvolgende levering is: {{ $LTinfo->DatumEerstVolgendeLevering }}</td>
+                            </tr>
+                        @else
+                            <tr>
+                                <td>{{ $LTinfo->Naam }}</td>
+                                <td>{{ $LTinfo->DatumLevering }}</td>
+                                <td>{{ $LTinfo->Aantal }}</td>
+                                <td>{{ $LTinfo->DatumEerstVolgendeLevering }}</td>
+                            </tr>
+                        @endif
                     @empty
-                        <tr colspan='3'>Geen producten bekend</tr>
+                        <tr>
+                            <td colspan="4">Geen producten bekend</td>
+                        </tr>
                     @endforelse
                 </tbody>
             </table>
