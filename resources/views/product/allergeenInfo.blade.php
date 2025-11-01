@@ -14,7 +14,8 @@
         <div class="col-md-10">
 
             <h1>{{ $title }}</h1>
-            <br>
+            
+            <hr class="my-4"/>
 
             <!-- Leverancier info als normale tekst boven de tabel -->
             <p>

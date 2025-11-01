@@ -15,13 +15,13 @@
 
             <h1>{{ $title }}</h1>
 
-            <br>
+            <hr class="my-4"/>
             
             <table class="table table-hover table-striped">
                 <thead>
                     <th>Barcode</th>
                     <th>Naam</th>
-                    <th>VerpakkingsEenheid (kg)</th>
+                    <th>VerpakkingsEenheid</th>
                     <th>AantalAanwezig</th>
                     <th>Allergenen Info</th>
                     <th>Leverantie Info</th>
