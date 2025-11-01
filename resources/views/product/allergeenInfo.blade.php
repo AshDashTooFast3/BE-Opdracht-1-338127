@@ -14,6 +14,7 @@
         <div class="col-md-10">
 
             <h1>{{ $title }}</h1>
+            <br>
 
             @if (session('success'))
                 <div class="alert alert-success alert-dimissable fade show" role="alert">
@@ -26,8 +27,8 @@
             <!-- Leverancier info als normale tekst boven de tabel -->
             <p>
                 @forelse ($productenInfo as $PRODinfo)
-                    Naam: {{ $PRODinfo->Productnaam }}<br>
-                    Barcode: {{ $PRODinfo->ProductBarcode }}
+                    <strong>Naam:</strong> {{ $PRODinfo->Productnaam }}<br>
+                    <strong>Barcode:</strong> {{ $PRODinfo->ProductBarcode }}
                     @break
                 @empty
                     Geen product informatie beschikbaar.
@@ -41,13 +42,14 @@
                 </thead>
                 <tbody>
                     @forelse ($allergenenInfo as $AGinfo)
+                    
                         <tr>
                             <td>{{ $AGinfo->Naam }}</td>
                             <td>{{ $AGinfo->Omschrijving }}</td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="2">Geen allergenen bekend</td>
+                            <td colspan="4">In dit product zitten geen stoffen die een allergische reactie kunnen veroorzaken</td>
                         </tr>
                     @endforelse
                 </tbody>
