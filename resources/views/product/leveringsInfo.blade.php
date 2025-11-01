@@ -20,10 +20,10 @@
             <!-- Leverancier info als normale tekst boven de tabel -->
             <p>
                 @forelse ($leverancierInfo as $LCinfo)
-                    <p>Naam Leverancier: {{ $LCinfo->Naam }}</p>
-                    <p>Contactpersoon leverancier: {{ $LCinfo->Contactpersoon }}</p>
-                    <p>Leverancier nummer: {{ $LCinfo->Leveranciernummer }}</p>
-                    <p>Mobiel: {{ $LCinfo->Mobiel }}</p>
+                    <p> <strong>Naam Leverancier:</strong> {{ $LCinfo->Naam }}</p>
+                    <p><strong>Contactpersoon leverancier:</strong> {{ $LCinfo->Contactpersoon }}</p>
+                    <p><strong>Leverancier nummer:</strong> {{ $LCinfo->Leveranciernummer }}</p>
+                    <p><strong>Mobiel:</strong> {{ $LCinfo->Mobiel }}</p>
                 @empty
                     Geen leverancier informatie beschikbaar.
                 @endforelse

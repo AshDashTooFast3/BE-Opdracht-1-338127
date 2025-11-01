@@ -20,8 +20,8 @@
             <!-- Leverancier info als normale tekst boven de tabel -->
             <p>
                 @forelse ($productenInfo as $PRODinfo)
-                    <strong>Naam:</strong> {{ $PRODinfo->Productnaam }}<br>
-                    <strong>Barcode:</strong> {{ $PRODinfo->ProductBarcode }}
+                    <p><strong>Naam:</strong> {{ $PRODinfo->Productnaam }}</p>
+                    <p><strong>Barcode:</strong> {{ $PRODinfo->ProductBarcode }}</p>
                     @break
                 @empty
                     Geen product informatie beschikbaar.
