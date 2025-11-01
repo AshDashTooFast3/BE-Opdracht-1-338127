@@ -16,14 +16,6 @@
             <h1>{{ $title }}</h1>
             <br>
 
-            @if (session('success'))
-                <div class="alert alert-success alert-dimissable fade show" role="alert">
-                    {{ session('success') }}
-                    <button type="button" class="btn-close" aria-label="sluiten" data-bs-dismiss="alert"></button>
-                </div>
-                <meta http-equiv="refresh" content="3;url={{ route('home') }}">
-            @endif
-
             <!-- Leverancier info als normale tekst boven de tabel -->
             <p>
                 @forelse ($productenInfo as $PRODinfo)
